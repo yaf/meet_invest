@@ -8,8 +8,8 @@
 
 <script>
 export default {
-    name: "Header",
-}
+    name: "header",
+};
 </script>
 
 <style lang="scss">

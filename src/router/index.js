@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '@/views/Home.vue'
+import Accueil from '@/views/accueil.vue'
 import APropos from '@/views/aPropos.vue'
 import EntrepreneurDetails from '@/views/entrepreneurDetails.vue'
 import Entrepreneurs from '@/views/entrepreneurs.vue'
@@ -16,29 +16,21 @@ Vue.use(VueRouter)
   const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home,
+    name: 'Accueil',
+    component: Accueil,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
-    path: '/',
+    path: '/a-propos',
     name: 'APropos',
     component: APropos,
   },
   {
-    path: '/',
+    path: '/entrepreneur-details',
     name: 'EntrepreneurDetails',
     component: EntrepreneurDetails,
   },
   {
-    path: '/',
+    path: '/entrepreneurs',
     name: 'Entrepreneurs',
     component: Entrepreneurs,
   },
@@ -53,22 +45,22 @@ Vue.use(VueRouter)
     component: FormContact,
   },
   {
-    path: '/',
+    path: '/inscription-entrepreneur',
     name: 'FormEntrepreneur',
     component: FormEntrepreneur,
   },
   {
-    path: '/',
+    path: '/inscription-investisseur',
     name: 'FormInvestisseur',
     component: FormInvestisseur,
   },
   {
-    path: '/',
+    path: '/investisseurs',
     name: 'Investisseur',
     component: Investisseur,
   },
   {
-    path: '/',
+    path: '/mentions-legales',
     name: 'MentionsLegales',
     component: MentionsLegales,
   },
