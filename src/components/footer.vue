@@ -10,7 +10,9 @@
                 </div>
                 <div class="ascenter">
                      <div class="container">
-                        <h4><a href="#" class="text-reset font-weight-bold fontTitle">Meet Invest</a></h4>
+                        <router-link to="/" class="text-reset">
+                            <h4 class="text-reset font-weight-bold fontTitle">Meet Invest</h4>
+                        </router-link>
                         <div><small><a href="#" class="text-reset">Mentions Légales</a></small></div>
                         <div><small><a href="#" class="text-reset">CGU</a></small></div>
                     </div>
