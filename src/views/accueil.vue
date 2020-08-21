@@ -33,57 +33,34 @@
             </div>
           </div>
         </div>
-        <div class="col mb-4">
-          <div class="card h-100 bg-blue">
-            <img src="@/assets/pictos/02_subscribe.png" class="card-img-top size80" alt="picto inscription">
-            <div class="card-body">
-              <h5 class="card-title">Étape 2</h5>
-              <p class="card-text">Je m’inscris sur la plateforme</p>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 bg-blue">
-            <img src="@/assets/pictos/03_contact.png" class="card-img-top size80" alt="picto contact">
-            <div class="card-body">
-              <h5 class="card-title">Étape 3</h5>
-              <p class="card-text">L’équipe me contacte</p>
-            </div>
-          </div>
-        </div>
-        <div class="col mb-4">
-          <div class="card h-100 bg-blue">
-            <img src="@/assets/pictos/04_exchange.png" class="card-img-top size80" alt="picto échanger">
-            <div class="card-body">
-              <h5 class="card-title">Étape 4</h5>
-              <p class="card-text">Échanges entre mes attentes et les besoins des entrepreneurs</p>
-            </div>
-          </div>
-        </div>
+
         <div class="col mb-4">
           <div class="card h-100 bg-blue">
             <img src="@/assets/pictos/05_meeting.png" class="card-img-top size80" alt="picto se rencontrer">
             <div class="card-body">
-              <h5 class="card-title">Étape 5</h5>
-              <p class="card-text">On se rencontre</p>
+              <h5 class="card-title">Étape 2</h5>
+              <p class="card-text">Je rencontre le porteur de projet, on échange sur ses besoins et mes souhaits</p>
             </div>
           </div>
         </div>
+
         <div class="col mb-4">
           <div class="card h-100 bg-blue">
             <img src="@/assets/pictos/06_contract.png" class="card-img-top size80" alt="picto contrat">
             <div class="card-body">
-              <h5 class="card-title">Étape 6</h5>
-              <p class="card-text">On signe le contrat et je verse les fonds</p>
+              <h5 class="card-title">Étape 3</h5>
+              <p class="card-text">On conclut et la collaboration démarre</p>
             </div>
           </div>
         </div>
+
       </div>
     </div>
 
 <!-- Bloc Entrepreneurs à l'affiche -->
+      <h3 class="block-title">Les entrepreneurs à l'affiche</h3>
+
       <div class="banner2">
-        <h3 class="block-title">Les entrepreneurs à l'affiche</h3>
         <div class="card" style="width: 18rem;">
           <img src="@/assets/entrepreneurs/01_woman.jpg" class="card-img-top" alt="image portrait entrepreneur">
           <div class="card-body">
@@ -156,7 +133,6 @@ export default {
     background-color: #4A44F2;
     justify-content: space-around;
     padding: 20px 20px;
-    flex-wrap: wrap;
   }
 
   .banner2 img {

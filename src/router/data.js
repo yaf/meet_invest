@@ -32,4 +32,5 @@ export const project = [
     financial_needs: '80000',
     other_needs: 'Relations publiques'
   },
+  
 ]
