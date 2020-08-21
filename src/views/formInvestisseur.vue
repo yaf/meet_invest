@@ -45,8 +45,8 @@
                 <input type="number" class="form-control" id="profitability" name="profitability">
             </div> 
             <div class="form-group">
-                <label for="exampleFormControlSelect2">Quelles catégories de projet vous intéresse ?</label>
-                <select multiple class="form-control" id="exampleFormControlSelect2">
+                <label for="typeProject">Quelles catégories de projet vous intéresse ?</label>
+                <select multiple class="form-control" id="typeProject">
                     <option>Éducation</option>
                     <option>Écologie</option>
                     <option>Social</option>
@@ -55,10 +55,10 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlSelect2">Quelle est votre appétence au risque ?</label>
+                <label for="risk">Quelle est votre appétence au risque ?</label>
                 <div class="form-check form-check-inline ml-3">
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="risk0">
-                    <label class="form-check-label" for="risk1">0</label>
+                    <label class="form-check-label" for="risk0">0</label>
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="risk1">
@@ -75,7 +75,7 @@
             </div>
             
             <div class="form-group">
-                <label for="exampleFormControlSelect2">Pourquoi souhaitez-vous investir ?</label>
+                <label for="whyInvest">Pourquoi souhaitez-vous investir ?</label>
                 <select multiple class="form-control" id="exampleFormControlSelect2">
                     <option>Rentabilité annuelle</option>
                     <option>Aider au développement de projet</option>
@@ -114,12 +114,12 @@ export default {
 
 <style>
 
-.form {
+.forminvestisseur {
     margin: 10vh 10vw;
 }
 
 .bgYellow {
-    background-color: #fadd4b;
+    background-color: #EFEFEF;
 }
 
 </style>
