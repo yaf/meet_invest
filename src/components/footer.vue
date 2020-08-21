@@ -1,32 +1,32 @@
 <template>
-    <div class="footer py-4 border">
-        <div class="container grid">
-                <div class="container d-flex flex-column align-items-start ascenter">
-                    <div class="text-uppercase mb-2 font-weight-bold">Meet Invest</div>
-                    <div>xx rue xxxxxxx</div>
-                    <div>xxxxx - VILLE</div>
-                    <div>meetinvest@gmail.com</div>
-                    <div>xx. xx. xx. xx. xx</div>
+    <div class="footer border">
+        <div class="grid acenter">
+                <div class="jstart ascenter container d-flex flex-column align-items-start">
+                    <div class="text-uppercase mb-2 font-weight-bold">contactez-nous</div>
+                    <div><small>25 rue de la Liberté</small></div>
+                    <div><small>75020 - Paris</small></div>
+                    <div><small>meetinvest@gmail.com</small></div>
+                    <div><small>01. 72. 20. 83. 17</small></div>
                 </div>
-                <div class="container ascenter">
-                     <div class="container d-flex flex-column">
-                        <h4><a href="#" class="text-uppercase text-reset font-weight-bold">Meet Invest</a></h4>
-                        <small><a href="#" class="text-reset">Mentions Légales</a></small>
-                        <small><a href="#" class="text-reset">CGU</a></small>
+                <div class="ascenter">
+                     <div class="container">
+                        <h4><a href="#" class="text-reset font-weight-bold fontTitle">Meet Invest</a></h4>
+                        <div><small><a href="#" class="text-reset">Mentions Légales</a></small></div>
+                        <div><small><a href="#" class="text-reset">CGU</a></small></div>
                     </div>
                 </div>
-                <div class="jselfend ascenter">
-                        <div class="container d-flex flex-column align-items-start">
+                <div class="jend ascenter">
+                    <div class="container d-flex flex-column align-items-start">
                         <div class="text-uppercase mb-2 font-weight-bold">Suivez-nous</div>
-                        <div><a href="" class="text-reset"><i class="fab fa-facebook-f"></i> Facebook</a></div>
-                        <div><a href="" class="text-reset"><i class="fab fa-twitter"></i> Twitter</a></div>
-                        <div><a href="" class="text-reset"><i class="fab fa-instagram"></i> Instagram</a></div>
+                        <div class="pt-2"><a href="" class="text-reset"><i class="fab fa-facebook-f"></i> Facebook</a></div> 
+                        <div class="pt-2"><a href="" class="text-reset"><i class="fab fa-twitter"></i> Twitter</a></div>
+                        <div class="pt-2"><a href="" class="text-reset"><i class="fab fa-instagram"></i> Instagram</a></div>
                     </div>
                 </div>
         </div>
-        <div class="container d-flex justify-content-around align-items-center mt-5">
+        <div class="container d-flex justify-content-around align-items-center mt-3">
 
-            <small>Copyright &copy; MeetInvest</small>
+            <small>2020 &copy; MeetInvest</small>
 
         </div>
     </div>
@@ -46,13 +46,35 @@ export default {
 	grid-template-columns: 1fr 1fr 1fr;
 }
 
-.jselfend
-{
-	justify-self: end;
-}
-
 .ascenter {
     align-self: center;
+}
+
+.jstart {
+    justify-self: start;
+}
+
+.jend {
+    justify-self: end;
+}
+
+.jcenter {
+    justify-self: center;
+}
+
+.acenter {
+    align-items: center;
+}
+
+.footer {
+        background-color: #f9dc4b;
+        background-size: cover;
+        margin: 0; 
+        padding: 5vh 5vw 1vh 5vw;
+}
+
+.fontTitle {
+    font-family: 'Satisfy', cursive;
 }
 
 </style>

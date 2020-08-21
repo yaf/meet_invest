@@ -1,8 +1,9 @@
 <template>
-    <div class="header grid">
-        <div class="ascenter font2"><i class="fas fa-piggy-bank"></i></div>
-        <div class="ascenter"><h2 font-weight-bold>MEET INVEST</h2></div>
-        <div class="ascenter font2"><i class="fas fa-bars"></i></div>
+    <div class="header">
+        <div class="grid">
+            <h2 class="font-weight-bold fontTitle astart">Meet Invest</h2>
+            <button class="font2 aend hamburger"><i class="fas fa-bars fontLogo"></i></button>
+        </div> 
     </div>
 </template>
 
@@ -12,23 +13,40 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
     .header {
-        margin: 3vh 0;
+        background-image: url('../assets/pictos/wall.jpg');
+        background-size: cover;
+        margin: 0; 
+        padding: 5vh 5vw;
+        font-family: 'Satisfy', cursive;
     }
 
-    .font2 {
-        font-size: 2em;
+    .fontTitle {
+        font-size: xx-largeal;
+    }
+
+    .fontLogo {
+        font-size: x-large;
     }
 
     .grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        margin: 3vh 5vw;
     }
 
-    .ascenter {
-        align-self: center;
+    .astart {
+        justify-self: start;
     }
 
+    .aend {
+        justify-self: end;
+    }
+
+    .hamburger {
+        border: none;
+        background-color: inherit;
+    }
 </style>
