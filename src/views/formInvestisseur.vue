@@ -1,5 +1,5 @@
 <template>
-    <div class="forminvestisseur border bgYellow ">
+    <div class="forminvestisseur border bgYellow">
         <h1 class="mt-5">Inscrivez-vous !</h1>
         <p><small>( C'est gratuit ♥︎ )</small></p>
         <p v-if="success">Votre inscription a bien été effectuée!</p>
