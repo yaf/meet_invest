@@ -5,6 +5,10 @@
     <div class="banner">
       <div class="left-box">
         <h2>MEETINVEST : <br>rencontrez des entrepreneurs qui vous correspondent</h2>
+        <Bouton :title="text"></Bouton>
+      </div>
+
+      <div class="right-box">
         <h3>Notre vision : <br>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
         <h3>Nos missions : </h3>
         <ul>
@@ -12,10 +16,7 @@
           <li>Lorem ipsum dolor sit amet</li>
           <li>Lorem ipsum dolor sit amet</li>
         </ul>
-      </div>
 
-      <div class="right-box">
-        <Bouton :title="text"></Bouton>
       </div>
     </div>
 
@@ -23,9 +24,13 @@
     <div class="banner2">
       <h3 class="block-title">Comment ça fonctionne ?</h3>
 
+      <div class="grid">
+
+      </div>
+
       <div class="row row-cols-1 row-cols-md-6">
         <div class="col mb-4">
-          <div class="card h-100 bg-blue">
+          <div class="card h-100 bg-yellow">
             <img src="@/assets/pictos/01_choose.png" class="card-img-top size80" alt="picto choisir">
             <div class="card-body">
               <h5 class="card-title">Étape 1</h5>
@@ -35,7 +40,7 @@
         </div>
 
         <div class="col mb-4">
-          <div class="card h-100 bg-blue">
+          <div class="card h-100 bg-yellow">
             <img src="@/assets/pictos/05_meeting.png" class="card-img-top size80" alt="picto se rencontrer">
             <div class="card-body">
               <h5 class="card-title">Étape 2</h5>
@@ -45,7 +50,7 @@
         </div>
 
         <div class="col mb-4">
-          <div class="card h-100 bg-blue">
+          <div class="card h-100 bg-yellow">
             <img src="@/assets/pictos/06_contract.png" class="card-img-top size80" alt="picto contrat">
             <div class="card-body">
               <h5 class="card-title">Étape 3</h5>
@@ -58,15 +63,15 @@
     </div>
 
 <!-- Bloc Entrepreneurs à l'affiche -->
-      <h3 class="block-title">Les entrepreneurs à l'affiche</h3>
+      <div class="banner">
+        <h3 class="block-title">Les entrepreneurs à l'affiche</h3>
 
-      <div class="banner2">
         <div class="card" style="width: 18rem;">
           <img src="@/assets/entrepreneurs/01_woman.jpg" class="card-img-top" alt="image portrait entrepreneur">
           <div class="card-body">
             <h5 class="card-title">Entrepreneur 1</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="#" class="btn btn-warning">Go somewhere</a>
           </div>
         </div>
       </div>
@@ -109,7 +114,6 @@ export default {
 
   .banner {
     display: flex;
-    background-color: #F2A30F;
     justify-content: center;
     padding: 40px 100px;
   }
@@ -120,17 +124,19 @@ export default {
     justify-content: space-around;
     text-align: left;
     margin-right: 70px;
+    color: #FBDF00;
   }
 
   .right-box {
     display: inline-flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: right;
+    text-align: right;
   }
 
   .banner2 {
     display: flex;
-    background-color: #4A44F2;
+    background-color: #FBDF00;
     justify-content: space-around;
     padding: 20px 20px;
   }
@@ -143,14 +149,24 @@ export default {
     margin-top: 5%;
   }
 
+  .grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-areas:
+          "a a a"
+          "a a a"
+          "a a a";
+          grid-gap: 10px;
+  }
+
   .block-title {
     flex: 1 100%;
     margin-top: 20px;
     margin-bottom: 20px;
   }
 
-  .bg-blue {
-    background-color: #4A44F2;
+  .bg-yellow {
+    background-color: #FBDF00;
     border: none;
     justify-content: center;
   }
