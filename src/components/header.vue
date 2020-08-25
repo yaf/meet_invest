@@ -21,7 +21,7 @@ export default {
         background-image: url('../assets/pictos/wall.jpg');
         background-size: cover;
         margin: 0;
-        padding: 5vh 5vw;
+        padding: 1vh 5vw;
         font-family: 'Satisfy', cursive;
     }
 
