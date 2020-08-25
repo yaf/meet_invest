@@ -33,59 +33,41 @@
                         <h6 class="card-title text-justify"><small>Un projet porté par :</small> <span class="text-muted"><u>{{ projet.entrepreneur}}</u></span></h6>
                         <p class="card-text text-justify">{{ projet.description }}</p>
                         <p class="card-text border p-2">Montant recherché&nbsp;: {{ projet.financial_needs }}&nbsp;€</p>
-                        <p class="card-text text-justify">{{ projet.other_needs }}</p>
+                        <p class="card-text text-justify"><small>Autres besoins&nbsp;:</small> {{ projet.other_needs }}</p>
                         <a href="" class="btn btn-warning" @click="goToProject(projet.id)">En savoir plus</a>
                     </template>
                 </Carte>
             </div>
-            <!-- <div class="grid">
-                <Card :project_title="cardTitle" :firstname="cardFirstname" :lastname="cardLastname" :category="cardCategory" :description="cardDescription" :financial_needs="cardFinancialneeds" :other_needs="cardOtherneeds" class="item1"></Card>
-                <Card :project_title="cardTitle" :firstname="cardFirstname" :lastname="cardLastname" :category="cardCategory" :description="cardDescription" :financial_needs="cardFinancialneeds" :other_needs="cardOtherneeds" class="item2"></Card>
-                <Card :project_title="cardTitle" :firstname="cardFirstname" :lastname="cardLastname" :category="cardCategory" :description="cardDescription" :financial_needs="cardFinancialneeds" :other_needs="cardOtherneeds" class="item3"></Card>
-                <Card :project_title="cardTitle" :firstname="cardFirstname" :lastname="cardLastname" :category="cardCategory" :description="cardDescription" :financial_needs="cardFinancialneeds" :other_needs="cardOtherneeds" class="item4"></Card>
-            </div> -->
-        </div>
     </div>
 </template>
 
 <script>
-import Carte from "@/components/Carte";
+    import Carte from "@/components/Carte";
 
-export default {
-    name: "Entrepreneurs",
+    export default {
+        name: "Entrepreneurs",
 
-    components: { Carte },
+        components: { Carte },
 
-    data() {
-        return {
-            projets: "",
-            cardTitle: "Ethically",
-            cardFirstname: "Sophie",
-            cardLastname: "Cheav",
-            cardCategory: "Ecologie",
-            cardDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ea, quaerat at libero perferendis necessitatibus illum facere officia. Velit aperiam in sequi suscipit nostrum blanditiis minus qui tenetur nisi voluptatibus",
-            cardFinancialneeds: "10.000",
-            cardOtherneeds: "Besoin de verdure",
-        }
-    },
+        data() {
+            return {
+                projets: "",
+            }
+        }, 
 
-    methods: {
-        goToProject(identifiant) {
-            this.$router.push({ path: `/entrepreneur-details/${identifiant}` });
-        }
-    },
+        methods: {
+            goToProject(identifiant) {
+                this.$router.push({ path: `/entrepreneur-details/${identifiant}` });
+            }
+        },
 
-    mounted() {
-        const axios = require("axios");
-        axios.get('http://localhost:3000/projets')
-        .then(response => (this.projets = response.data))
+        mounted() {
+            const axios = require("axios");
+            axios.get('http://localhost:3000/projets')
+            .then(response => (this.projets = response.data))
+        },
+
     }
-
-}
-
-
-
-
 </script>
 
 <style lang="scss">
