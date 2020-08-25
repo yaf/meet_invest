@@ -96,37 +96,8 @@ export default {
         & .grid{
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            // grid-template-areas: "a a b b c c d d";
             grid-gap: 2em;
         }
-    }
-
-    // .item1 {
-    //     grid-area: a;
-    // }
-
-    // .item2 {
-    //     grid-area: b;
-    // }
-
-    //  .item3 {
-    //     grid-area: c;
-    // }
-
-    // .item4 {
-    //     grid-area: d;
-    // }
-
-    .jselfend {
-        justify-self: end;
-    }
-
-    .jselfstart{
-        justify-self: end;
-    }
-
-    .ascenter {
-        align-self: center;
     }
 
     .satisfy {
