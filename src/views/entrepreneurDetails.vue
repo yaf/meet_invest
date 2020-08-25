@@ -18,7 +18,7 @@
                         <h3 class="text-justify mb-4">À propos de {{ item.entrepreneur}} :</h3>
                         <p class="text-justify">{{ item.entrepreneur-description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempora officia libero doloribus nesciunt minus eos? Doloribus omnis aut magni quibusdam, ducimus molestias et laudantium fugit unde quasi culpa id! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempora officia libero doloribus nesciunt minus eos? Doloribus omnis aut magni quibusdam, ducimus molestias et laudantium fugit unde quasi culpa id!</p>
                      </div>   
-                     <img src="@/assets/pictos/projet1.jpg" class="card-img-top col-md-5 mb-5 item4" alt="image présentation du projet">     
+                     <img src="@/assets/pictos/projet2.jpg" class="text-justify col-md-9 mb-5 item4" alt="image présentation du projet">     
                 </div>
                 <Bouton :title="buttonTitle" class="mb-5 text-justify"></Bouton>
             </div>
