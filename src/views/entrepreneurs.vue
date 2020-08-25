@@ -38,7 +38,6 @@
                     </template>
                 </Carte>
             </div>
-        </div>  
     </div>
 </template>
 
