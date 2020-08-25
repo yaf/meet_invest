@@ -3,7 +3,7 @@
         <div class="grid">
             <h2 class="font-weight-bold fontTitle astart">Meet Invest</h2>
             <button class="font2 aend hamburger"><i class="fas fa-bars fontLogo"></i></button>
-        </div> 
+        </div>
     </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
     .header {
         background-image: url('../assets/pictos/wall.jpg');
         background-size: cover;
-        margin: 0; 
+        margin: 0;
         padding: 5vh 5vw;
         font-family: 'Satisfy', cursive;
     }
