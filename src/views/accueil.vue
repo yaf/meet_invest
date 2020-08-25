@@ -55,8 +55,8 @@
         <div class="grid">
             <Carte v-for="projet in projets" :key="projet.id">
                 <template v-slot:img>
-                    <img src="@/assets/pictos/projet1.jpg" class="card-img-top" alt="image présentation du projet">
-                    <!-- <img :src="projet.image"/> -->
+                    <img src="@/assets/projets/projet1.jpg" class="card-img-top" alt="image présentation du projet"/>
+                    <!-- <img :src="projet.image"/>-->
                 </template>
                 <template v-slot:cardinfo>
                     <h5 class="card-title text-uppercase border p-1">{{ projet.titre }}</h5>
@@ -68,34 +68,8 @@
                     <a href="" class="btn btn-warning" @click="goToProject(projet.id)">En savoir plus</a>
                 </template>
             </Carte>
+            <Bouton :title="text3"></Bouton>
         </div>
-
-        <!-- <div class="card" style="width: 18rem;">
-          <img src="@/assets/entrepreneurs/01_woman.jpg" class="card-img-top" alt="image portrait entrepreneur">
-          <div class="card-body">
-            <h5 class="card-title">Entrepreneur 1</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-warning">Go somewhere</a>
-          </div>
-        </div>
-
-      <div class="card" style="width: 18rem;">
-        <img src="@/assets/entrepreneurs/01_woman.jpg" class="card-img-top" alt="image portrait entrepreneur">
-        <div class="card-body">
-          <h5 class="card-title">Entrepreneur 1</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-warning">Go somewhere</a>
-        </div>
-      </div>
-
-    <div class="card" style="width: 18rem;">
-      <img src="@/assets/entrepreneurs/01_woman.jpg" class="card-img-top" alt="image portrait entrepreneur">
-      <div class="card-body">
-        <h5 class="card-title">Entrepreneur 1</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-warning">Go somewhere</a>
-      </div>
-    </div> -->
 
 
 <!-- Bloc À propos / contact -->
@@ -127,6 +101,7 @@ export default {
     return {
       text: "Découvrir",
       text2: "Plus d'infos",
+      text3: "Découvrez tous les projets",
       projets: "",
       cardTitle: "Ethically",
       cardFirstname: "Sophie",
@@ -213,16 +188,19 @@ export default {
 
   .step1 img {
     width: 40%;
+    align-self: end;
   }
 
   .step2 img {
     width: 40%;
     margin-bottom: 16%;
+    align-self: end;
   }
 
   .step3 img {
     width: 40%;
     margin-bottom: 14%;
+    align-self: end;
   }
 
   .bg-yellow {
@@ -280,7 +258,7 @@ export default {
   }
 
   .bgy {
-      background-color: #f9dc4b;
+      background-color: #FBDF00;
   }
-  
+
 </style>

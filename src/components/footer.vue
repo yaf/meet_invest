@@ -20,7 +20,7 @@
                 <div class="jend ascenter">
                     <div class="container d-flex flex-column align-items-start">
                         <div class="text-uppercase mb-2 font-weight-bold">Suivez-nous</div>
-                        <div class="pt-2"><a href="" class="text-reset"><i class="fab fa-facebook-f"></i> Facebook</a></div> 
+                        <div class="pt-2"><a href="" class="text-reset"><i class="fab fa-facebook-f"></i> Facebook</a></div>
                         <div class="pt-2"><a href="" class="text-reset"><i class="fab fa-twitter"></i> Twitter</a></div>
                         <div class="pt-2"><a href="" class="text-reset"><i class="fab fa-instagram"></i> Instagram</a></div>
                     </div>
@@ -69,9 +69,9 @@ export default {
 }
 
 .footer {
-        background-color: #f9dc4b;
+        background-color: #FBDF00;
         background-size: cover;
-        margin: 0; 
+        margin: 0;
         padding: 5vh 5vw 1vh 5vw;
 }
 

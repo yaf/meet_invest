@@ -24,7 +24,7 @@
             <div class="grid">
                 <Carte v-for="projet in projets" :key="projet.id">
                     <template v-slot:img>
-                        <img src="@/assets/pictos/projet1.jpg" class="card-img-top" alt="image présentation du projet">
+                        <img src="@/assets/projets/projet1.jpg" class="card-img-top" alt="image présentation du projet">
                         <!-- <img :src="projet.image"/> -->
                     </template>
                     <template v-slot:cardinfo>

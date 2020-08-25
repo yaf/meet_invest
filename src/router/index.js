@@ -28,7 +28,7 @@ Vue.use(VueRouter)
     component: EntrepreneurDetails,
   },
   {
-    path: "/entrepreneur-details:id",
+    path: "/entrepreneur-details/:id",
     name: "EntrepreneurDetails",
     component: EntrepreneurDetails,
   },
