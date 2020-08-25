@@ -50,10 +50,27 @@
       </div>
 
 <!-- Bloc Entrepreneurs à l'affiche -->
-      <div class="banner grid">
         <h2 class="block-title">Les entrepreneurs à l'affiche</h2>
 
-        <div class="card" style="width: 18rem;">
+        <div class="grid">
+            <Carte v-for="projet in projets" :key="projet.id">
+                <template v-slot:img>
+                    <img src="@/assets/pictos/projet1.jpg" class="card-img-top" alt="image présentation du projet">
+                    <!-- <img :src="projet.image"/> -->
+                </template>
+                <template v-slot:cardinfo>
+                    <h5 class="card-title text-uppercase border p-1">{{ projet.titre }}</h5>
+                    <p><small><i class="fas fa-tag"></i> {{ projet.categorie }}</small></p>
+                    <h6 class="card-title text-justify"><small>Un projet porté par :</small> <span class="text-muted"><u>{{ projet.entrepreneur}}</u></span></h6>
+                    <p class="card-text text-justify">{{ projet.description }}</p>
+                    <p class="card-text border p-2">Montant recherché&nbsp;: {{ projet.financial_needs }}&nbsp;€</p>
+                    <p class="card-text text-justify">{{ projet.other_needs }}</p>
+                    <a href="" class="btn btn-warning" @click="goToProject(projet.id)">En savoir plus</a>
+                </template>
+            </Carte>
+        </div>
+
+        <!-- <div class="card" style="width: 18rem;">
           <img src="@/assets/entrepreneurs/01_woman.jpg" class="card-img-top" alt="image portrait entrepreneur">
           <div class="card-body">
             <h5 class="card-title">Entrepreneur 1</h5>
@@ -78,9 +95,8 @@
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="#" class="btn btn-warning">Go somewhere</a>
       </div>
-    </div>
+    </div> -->
 
-  </div>
 
 <!-- Bloc À propos / contact -->
       <div class="banner grey">
@@ -99,18 +115,39 @@
 <script>
 // @ is an alias to /src
 import Bouton from "@/components/Bouton";
+import Carte from "@/components/Carte";
 
 export default {
   name: 'Accueil',
 
   components:
-    { Bouton },
+    { Bouton, Carte },
 
   data() {
     return {
       text: "Découvrir",
       text2: "Plus d'infos",
+      projets: "",
+      cardTitle: "Ethically",
+      cardFirstname: "Sophie",
+      cardLastname: "Cheav",
+      cardCategory: "Ecologie",
+      cardDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ea, quaerat at libero perferendis necessitatibus illum facere officia. Velit aperiam in sequi suscipit nostrum blanditiis minus qui tenetur nisi voluptatibus",
+      cardFinancialneeds: "10.000",
+      cardOtherneeds: "Besoin de verdure",
     }
+  },
+
+  methods: {
+      goToProject(identifiant) {
+          this.$router.push({ path: `/entrepreneur-details/${identifiant}` });
+      }
+  },
+
+  mounted() {
+      const axios = require("axios");
+      axios.get('http://localhost:3000/projets')
+      .then(response => (this.projets = response.data))
   }
 
 };
@@ -226,4 +263,24 @@ export default {
     font-size: 1em;
   }
 
+  .jselfend {
+      justify-self: end;
+  }
+
+  .jselfstart{
+      justify-self: end;
+  }
+
+  .ascenter {
+      align-self: center;
+  }
+
+  .satisfy {
+  font-family: 'Satisfy', cursive;
+  }
+
+  .bgy {
+      background-color: #f9dc4b;
+  }
+  
 </style>

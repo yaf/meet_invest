@@ -37,14 +37,14 @@
                         <a href="" class="btn btn-warning" @click="goToProject(projet.id)">En savoir plus</a>
                     </template>
                 </Carte>
-                </div>
+            </div>
             <!-- <div class="grid">
                 <Card :project_title="cardTitle" :firstname="cardFirstname" :lastname="cardLastname" :category="cardCategory" :description="cardDescription" :financial_needs="cardFinancialneeds" :other_needs="cardOtherneeds" class="item1"></Card>
                 <Card :project_title="cardTitle" :firstname="cardFirstname" :lastname="cardLastname" :category="cardCategory" :description="cardDescription" :financial_needs="cardFinancialneeds" :other_needs="cardOtherneeds" class="item2"></Card>
                 <Card :project_title="cardTitle" :firstname="cardFirstname" :lastname="cardLastname" :category="cardCategory" :description="cardDescription" :financial_needs="cardFinancialneeds" :other_needs="cardOtherneeds" class="item3"></Card>
                 <Card :project_title="cardTitle" :firstname="cardFirstname" :lastname="cardLastname" :category="cardCategory" :description="cardDescription" :financial_needs="cardFinancialneeds" :other_needs="cardOtherneeds" class="item4"></Card>
             </div> -->
-        </div>  
+        </div>
     </div>
 </template>
 
@@ -67,7 +67,7 @@ export default {
             cardFinancialneeds: "10.000",
             cardOtherneeds: "Besoin de verdure",
         }
-    }, 
+    },
 
     methods: {
         goToProject(identifiant) {
@@ -83,7 +83,7 @@ export default {
 
 }
 
-    
+
 
 
 </script>
