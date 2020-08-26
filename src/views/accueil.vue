@@ -121,7 +121,7 @@ export default {
 
   mounted() {
       const axios = require("axios");
-      axios.get('http://localhost:3000/projets')
+      axios.get('http://localhost:3000/projets3')
       .then(response => (this.projets = response.data))
   }
 
