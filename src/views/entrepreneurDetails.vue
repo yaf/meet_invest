@@ -20,7 +20,7 @@
                      </div>   
                      <img src="@/assets/pictos/projet2.jpg" class="text-justify col-md-9 mb-5 item4" alt="image présentation du projet">     
                 </div>
-                <Bouton :title="buttonTitle" class="mb-5 text-justify"></Bouton>
+                <Bouton :title="buttonTitle" class="mb-5 text-justify" @click.native="goToContact(item.id)"></Bouton>
             </div>
         </div>
     </div>
@@ -40,6 +40,12 @@
         },
 
         components: { Bouton },
+
+        methods: {
+            goToContact(identifiant) {
+                this.$router.push({ path: `/contact/${identifiant}`});
+            }
+        },
 
         mounted() {
             const axios = require("axios");

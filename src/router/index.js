@@ -8,6 +8,7 @@ import FormEntrepreneur from '@/views/formEntrepreneur.vue'
 import FormInvestisseur from '@/views/formInvestisseur.vue'
 import Investisseur from '@/views/investisseur.vue'
 import MentionsLegales from '@/views/mentionsLegales.vue'
+import Contact from '@/views/contact.vue'
 
 Vue.use(VueRouter)
 
@@ -56,6 +57,11 @@ Vue.use(VueRouter)
     path: '/mentions-legales',
     name: 'MentionsLegales',
     component: MentionsLegales,
+  },
+  {
+    path: '/contact/:id',
+    name: 'Contact',
+    component: Contact,
   },
 
 ]

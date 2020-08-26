@@ -3,7 +3,6 @@
     <button class="btn btn-outline-dark btn-lg" type="button" name="button">
       {{ title }}
     </button>
-
   </div>
 
 </template>
