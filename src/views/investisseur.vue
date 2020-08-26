@@ -13,7 +13,7 @@
           <img src="http://lorempixel.com/400/300/" alt="image de MeetInvest" class="ascenter item2">
         </div>
         <div class="mt-5 container d-flex">
-             <router-link to="/inscription-investisseur">
+             <router-link to="/form-investisseur">
                 <Bouton class="mr-4" :title="name"></Bouton>
              </router-link>   
              <router-link to="/entrepreneurs">

@@ -48,7 +48,7 @@ Vue.use(VueRouter)
     component: FormInvestisseur,
   },
   {
-    path: '/investisseurs',
+    path: '/investisseur',
     name: 'Investisseur',
     component: Investisseur,
   },
