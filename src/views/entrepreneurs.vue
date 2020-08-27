@@ -1,11 +1,13 @@
 <template>
     <div class="entrepreneurs">
-        <div class="border p-5 bgy">
-            <h1 class="text-justify mb-4 satisfy">Trouvez le projet qui vous correspond</h1>
+
+      <!-- encadré jaune / filtrer les projets -->
+        <div class="border p-5 mgin-5 bgy">
+            <h1 class="text-justify mb-4 satisfy">Investisseurs : trouvez le projet qui vous correspond</h1>
             <p class="text-justify pr-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, optio, aut esse dolores quibusdam nostrum soluta voluptates dicta iure ullam officiis non nulla? Molestias cumque doloremque sunt! Voluptates, odit tempora.</p>
             <form>
                 <div class="form-group row">
-                    <label for="category " class="col-sm-3 col-form-label"><strong>Choisissez une catégorie :</strong></label>
+                    <label for="category" class="col-sm-3 col-form-label"><strong>Choisissez une catégorie :</strong></label>
                     <select class="form-control col-sm-2">
                         <option name="education">Éducation</option>
                         <option name="ecologie">Écologie</option>
@@ -19,6 +21,14 @@
                 </div>
             </form>
         </div>
+
+        <!-- encart fond gris + bouton : Entrepreneur > inscription entrepreneur -->
+        <div class="border p-5 bg-lightgrey">
+            <h2>Vous êtes entrepreneur ?</h2>
+            <button type="button" name="button" class="btn mb-2 ml-5 btn-warning"><a href="/form-entrepreneur">Je propose un projet</a></button>
+        </div>
+
+        <!-- encadré bordure simple grise : vue sur tous les projets -->
         <div class="border p-4 mt-5">
             <h2 class="mb-5 border p-4">Tous les projets</h2>
             <div class="grid">
@@ -54,7 +64,7 @@
             return {
                 projets: "",
             }
-        }, 
+        },
 
         methods: {
             goToProject(identifiant) {
@@ -68,7 +78,7 @@
             .then(response => (this.projets = response.data))
         },
 
-    }
+    };
 </script>
 
 <style lang="scss">
@@ -88,7 +98,25 @@
     }
 
     .bgy {
-        background-color: #f9dc4b;
+        background-color: #FBDF00;
+    }
+
+    .bg-lightgrey {
+      background-color: #E9E9EB;
+      color: #2c3e50;
+      margin-top: 5%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 50%;
+    }
+
+    .btn-yellow {
+      color: #FBDF00;
+    }
+
+    .mgin-5 {
+      margin-top: 5%;
     }
 
 </style>
