@@ -1,145 +1,135 @@
 <template>
-    <div class="formentrepreneur border bgYellow ">
-        <h1 class="mt-5">Inscrivez-vous !</h1>
-        <p><small>( C'est gratuit ♥︎ )</small></p>
-        <p v-if="success">Votre inscription a bien été effectuée!</p>
+    <div class="formentrepreneur border bgYellow p-5 ">
+      <h1 class="mt-5">Proposez votre projet !</h1>
+      <p><small>( C'est gratuit ♥︎ )</small></p>
+      <p v-if="success">Votre demande d'inscription a bien été envoyée!</p>
 
+      <form>
         <!-- partie 1 infos entrepreneur -->
         <div class="entrepreneur-id">
-
-          <h2>Vos coordonnées</h2>
-          <form class="p-4">
-            <div class="form-row mb-2">
-              <div class="form-group col-md-3">
+          <h2 class="mt-5">Vos coordonnées</h2>
+            <div class="form-row mb-2 text-center">
+              <div class="form-group col-md-6">
                 <label for="lastname"><strong>Nom</strong></label>
-                <input type="text" class="form-control" name="lastname">
+                <input type="text" class="form-control" v-model="lastname">
               </div>
               <div class="form-group col-md-6">
                 <label for="firstname"><strong>Prénom</strong></label>
-                <input type="text" class="form-control" name="firstname">
+                <input type="text" class="form-control" v-model="firstname">
               </div>
             </div>
             <div class="form-group mb-4">
               <label for="address"><strong>Adresse</strong></label>
-              <input type="text" class="form-control" name="address">
+              <input type="text" class="form-control" v-model="address">
             </div>
             <div class="form-row mb-4">
               <div class="form-group col-md-6">
                 <label for="cp"><strong>Code Postal</strong></label>
-                <input type="text" class="form-control" name="cp">
+                <input type="text" class="form-control" v-model="cp">
               </div>
               <div class="form-group col-md-6">
                 <label for="city"><strong>Ville</strong></label>
-                <input type="text" class="form-control" name="city">
+                <input type="text" class="form-control" v-model="city">
               </div>
             </div>
             <div class="form-group mb-4">
               <label for="country"><strong>Pays</strong></label>
-              <input type="text" class="form-control" name="country">
+              <input type="text" class="form-control" v-model="country">
             </div>
             <div class="form-row mb-4">
               <div class="form-group col-md-6">
                 <label for="phone"><strong>Téléphone</strong></label>
-                <input type="number" class="form-control" name="phone">
+                <input type="number" class="form-control" v-model="phone">
               </div>
               <div class="form-group col-md-6">
                 <label for="mail"><strong>Email</strong></label>
-                <input type="email" class="form-control" name="mail">
+                <input type="email" class="form-control" v-model="mail">
               </div>
             </div>
-          </form>
-
         </div>
 
         <!-- partie 2 infos entreprise -->
-        <div class="entreprise">
-          <h2>Informations sur votre entreprise</h2>
-
-          <form class="p-4">
-
+        <div class="entreprise mt-3">
+          <h2 class="mb-4 mt-5">Informations sur votre entreprise</h2>
             <div class="form-row mb-4">
               <div class="form-group col-md-6">
-                <label for="raison_sociale"><strong>Raison sociale</strong></label>
-                <input type="text" class="form-control" name="raison_sociale">
+                <label for="corporate_name"><strong>Raison sociale</strong></label>
+                <input type="text" class="form-control" v-model="corporate_name">
               </div>
               <div class="form-group col-md-6">
                 <label for="siret"><strong>Numéro siret</strong></label>
-                <input type="number" class="form-control" name="siret">
+                <input type="number" class="form-control" v-model="siret">
               </div>
             </div>
             <div class="form-row mb-4">
               <div class="form-group col-md-6">
-                <label for="ca"><strong>Chiffre d'affaires</strong></label>
-                <input type="text" class="form-control" name="ca">
+                <label for="sales"><strong>Chiffre d'affaires</strong></label>
+                <input type="text" class="form-control" v-model="sales">
               </div>
               <div class="form-group col-md-6">
-                <label for="capital_social"><strong>Capital social</strong></label>
-                <input type="number" class="form-control" name="capital_social">
+                <label for="share_capital"><strong>Capital social</strong></label>
+                <input type="number" class="form-control" v-model="share_capital">
               </div>
             </div>
             <div>
               <div class="form-group mb-5">
                 <label for="financial_needs"><strong>Besoin financier</strong></label>
-                <input type="number" class="form-control" name="financial_needs">
+                <input type="number" class="form-control" v-model="financial_needs">
               </div>
             </div>
-          </form>
         </div>
 
         <!-- partie 3 Le projet -->
         <div class="projet">
-          <h2>Votre projet en quelques questions...</h2>
-          <form class="p-4">
-
-            <div class="form-row mb-2">
-              <div class="form-group col-md-3">
-                <label for="title"><strong>Nom de votre projet</strong></label>
-                <input type="text" class="form-control" name="title">
+          <h2 class="p-4 mt-5">Votre projet en quelques questions...</h2>
+              <div class="form-group">
+                <label for="project_title"><strong>Nom de votre projet</strong></label>
+                <input type="text" class="form-control" v-model="project_title">
               </div>
-              <div class="form-group col-md-6">
+              <div class="form-group">
                 <label for="category"><strong>Choisissez une catégorie</strong></label>
-                <select class="form-control col-sm-2">
-                    <option name="education">Éducation</option>
-                    <option name="ecologie">Écologie</option>
-                    <option name="mixite">Mixité</option>
-                    <option name="emploi">Emploi</option>
-                    <option name="tech">Tech</option>
-                    <option name="social">Social</option>
-                    <option name="handicap">Handicap</option>
+                <select class="form-control" v-model="selected">
+                    <option value="Éducation">Éducation</option>
+                    <option value="Écologie">Écologie</option>
+                    <option value="Mixite">Mixité</option>
+                    <option value="Emploi">Emploi</option>
+                    <option value="Tech">Tech</option>
+                    <option value="Social">Social</option>
+                    <option value="Handicap">Handicap</option>
                 </select>
               </div>
-            </div>
             <div class="form-group mb-4">
               <label for="description"><strong>Décrivez-le en quelques lignes (5 max)</strong></label>
-              <textarea id="description-area" class="form-control" name="description" rows="5" cols="33"></textarea>
+              <textarea id="description-area" class="form-control" v-model="description" rows="5" cols="33"></textarea>
             </div>
             <div class="form-row mb-4">
               <div class="form-group col-md-6">
                 <label for="financial_needs"><strong>Vos besoins financiers pour le réaliser</strong></label>
-                <input type="number" class="form-control" name="financial_needs">
+                <input type="number" class="form-control" v-model="financial_needs">
               </div>
               <div class="form-group col-md-6">
                 <label for="other_needs"><strong>D'autres besoins ?</strong></label>
-                <input type="text" class="form-control" name="other_needs">
+                <input type="text" class="form-control" v-model="other_needs">
               </div>
             </div>
-            <!-- attention : partie chargement d'images / vidéos... -->
-            <div class="form-group mb-4">
-              <label for="image"><strong>Chargez une image d'illustration :</strong></label>
-              <input type="" class="form-control" name="image">
+            <!-- attention : partie chargement d'images-->
+            <div class="custom-file mb-5">
+              <input type="file" class="custom-file-input" id="customFileLangHTML">
+              <label class="custom-file-label" for="customFileLangHTML" data-browse="Parcourir"><strong>Chargez une image d'illustration</strong></label>
             </div>
             <div class="form-row mb-4">
               <div class="form-group col-md-6">
-                <label for="video"><strong>Chargez une vidéo :</strong></label>
-                <input type="" class="form-control" name="video">
+                <label for="video_link"><strong>Un lien vers une vidéo ? :</strong></label>
+                <input type="" class="form-control" v-model="video_link">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="web"><strong>Un site web ? :</strong></label>
+                <input type="" class="form-control" v-model="web">
               </div>
             </div>
-        </form>
       </div>
 
-        <!-- Partie mot de passe etc. -->
-        <form class="p-4">
-
+        <!-- Partie mot de passe-->
             <div class="form-row mb-5">
                 <div class="form-group col-md-6">
                     <label for="password"><strong>Choisissez un mot de passe :</strong></label>
@@ -153,7 +143,7 @@
 
             <Bouton :title="title"></Bouton>
             <!-- <Bouton :title="title" :@click="postForm()"></Bouton> -->
-        </form>
+      </form>
     </div>
 </template>
 
@@ -167,7 +157,8 @@ export default {
 
     data() {
         return{
-            title: "S'inscrire",
+            title: "Proposez votre projet!",
+            file: "",
             firstname: "",
             lastname: "",
             address: "",
@@ -176,11 +167,17 @@ export default {
             country: "",
             phone: "",
             mail: "",
-            raison_sociale: "",
+            corporate_name: "",
             siret: "",
-            capital_social: "",
-            ca: "",
+            share_capital: "",
+            sales: "",
+            project_title: '',
             financial_needs: "",
+            other_needs: '',
+            selected: '',
+            description: "",
+            web: "",
+            video_link: "",
             password: "",
             passwordconfirm: "",
             success: false,
@@ -191,7 +188,7 @@ export default {
         // postForm() {
         //     const axios = require("axios");
 
-        //     this.axios.post('urldelapi', {
+        //     this.axios.post('http://localhost:3000/entrepreneurs', {
         //         firstname: this.firstname,
         //         lastname: this.lastname,
         //         address: this.address,
@@ -200,31 +197,41 @@ export default {
         //         country: this.country,
         //         phone: this.phone,
         //         mail: this.mail,
-        //         raison_sociale: this.raison_sociale,
+        //         corporate_name: this.corporate_name,
         //         siret: this.siret,
-        //         capital_social: this.capital_social,
-        //         ca: this.ca,
-        //         amount: this.amount,
+        //         share_capital: this.share_capital,
+        //         sales: this.sales,
+        //         financial_needs: this.financial_needs,
+        //         other_needs: this.other_needs,
+        //         project_title: this.project_title,
+        //         category: this.selected,
+        //         description: this.description,
+        //         web: this.web,
+        //         video_link: this.video_link,
         //         password: this.password,
-        //         passwordconfirm: this.passwordconfirm
         //     })
         //     .then(() => {
-        //         this.firstname = "",
-        //         this.lastname = "",
-        //         this.address = "",
-        //         this.cp = "",
-        //         this.city = "",
-        //         this.country = "",
-        //         this.phone = "",
-        //         this.mail = "",
-        //         this.raison_sociale = "",
-        //         this.siret = "",
-        //         this.capital_social = "",
-        //         this.ca = "",
-        //         this.amount = "",
-        //         this.password = "",
-        //         this.passwordconfirm = "",
-        //         this.success = true;
+        //         firstname = this.firstname,
+        //         lastname = this.lastname,
+        //         address = this.address,
+        //         cp = this.cp,
+        //         city = this.city,
+        //         country = this.country,
+        //         phone = this.phone,
+        //         mail = this.mail,
+        //         corporate_name = this.corporate_name,
+        //         siret = this.siret,
+        //         share_capital = this.share_capital,
+        //         sales = this.sales,
+        //         financial_needs = this.financial_needs,
+        //         other_needs = this.other_needs,
+        //         project_title = this.project_title,
+        //         category = this.selected,
+        //         description = this.description,
+        //         web = this.web,
+        //         video_link = this.video_link,
+        //         password = this.password,
+        //         success = true,
         //     })
         //     .catch((err) => {
         //         console.log(err);
@@ -236,7 +243,6 @@ export default {
 </script>
 
 <style>
-
     .formentrepreneur {
         margin: 10vh 10vw;
     }
@@ -244,5 +250,4 @@ export default {
     .bgYellow {
         background-color: #EFEFEF;
     }
-
 </style>
