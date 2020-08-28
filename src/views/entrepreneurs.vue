@@ -2,7 +2,7 @@
     <div class="entrepreneurs">
 
       <!-- encadré jaune / filtrer les projets -->
-        <div class="border p-5 mgin-5 bgy">
+        <div class="border p-5 mt-5 bgy">
             <h1 class="text-justify mb-4 satisfy">Investisseurs : trouvez le projet qui vous correspond</h1>
             <p class="text-justify pr-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, optio, aut esse dolores quibusdam nostrum soluta voluptates dicta iure ullam officiis non nulla? Molestias cumque doloremque sunt! Voluptates, odit tempora.</p>
             <form>
@@ -23,7 +23,7 @@
         </div>
 
         <!-- encart fond gris + bouton : Entrepreneur > inscription entrepreneur -->
-        <div class="border p-5 bg-lightgrey">
+        <div class="container border p-5 bg-lightgrey mt-5">
             <h2>Vous êtes entrepreneur ?</h2>
             <button type="button" name="button" class="btn mb-2 ml-5 btn-warning"><a href="/form-entrepreneur">Je propose un projet</a></button>
         </div>
@@ -104,19 +104,10 @@
     .bg-lightgrey {
       background-color: #E9E9EB;
       color: #2c3e50;
-      margin-top: 5%;
       display: flex;
-      flex-direction: row;
-      justify-content: center;
-      width: 50%;
     }
 
     .btn-yellow {
       color: #FBDF00;
     }
-
-    .mgin-5 {
-      margin-top: 5%;
-    }
-
 </style>
