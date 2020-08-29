@@ -61,6 +61,10 @@ export default {
         background-size: cover;
         margin: 0;
         padding: 1vh 5vw;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0px;
+        z-index: 6;
     }
 
     .fontTitle {

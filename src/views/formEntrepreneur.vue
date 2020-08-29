@@ -71,12 +71,6 @@
                 <input type="number" class="form-control" v-model="share_capital">
               </div>
             </div>
-            <div>
-              <div class="form-group mb-5">
-                <label for="financial_needs"><strong>Besoin financier</strong></label>
-                <input type="number" class="form-control" v-model="financial_needs">
-              </div>
-            </div>
         </div>
 
         <!-- partie 3 Le projet -->
@@ -141,8 +135,7 @@
                 </div>
             </div>
 
-            <Bouton :title="title"></Bouton>
-            <!-- <Bouton :title="title" :@click="postForm()"></Bouton> -->
+            <Bouton :title="title" @click.native="postForm()"></Bouton>
       </form>
     </div>
 </template>
@@ -184,60 +177,59 @@ export default {
         }
     },
 
-    //methods: {
-        // postForm() {
-        //     const axios = require("axios");
-
-        //     this.axios.post('http://localhost:3000/entrepreneurs', {
-        //         firstname: this.firstname,
-        //         lastname: this.lastname,
-        //         address: this.address,
-        //         cp: this.cp,
-        //         city: this.city,
-        //         country: this.country,
-        //         phone: this.phone,
-        //         mail: this.mail,
-        //         corporate_name: this.corporate_name,
-        //         siret: this.siret,
-        //         share_capital: this.share_capital,
-        //         sales: this.sales,
-        //         financial_needs: this.financial_needs,
-        //         other_needs: this.other_needs,
-        //         project_title: this.project_title,
-        //         category: this.selected,
-        //         description: this.description,
-        //         web: this.web,
-        //         video_link: this.video_link,
-        //         password: this.password,
-        //     })
-        //     .then(() => {
-        //         firstname = this.firstname,
-        //         lastname = this.lastname,
-        //         address = this.address,
-        //         cp = this.cp,
-        //         city = this.city,
-        //         country = this.country,
-        //         phone = this.phone,
-        //         mail = this.mail,
-        //         corporate_name = this.corporate_name,
-        //         siret = this.siret,
-        //         share_capital = this.share_capital,
-        //         sales = this.sales,
-        //         financial_needs = this.financial_needs,
-        //         other_needs = this.other_needs,
-        //         project_title = this.project_title,
-        //         category = this.selected,
-        //         description = this.description,
-        //         web = this.web,
-        //         video_link = this.video_link,
-        //         password = this.password,
-        //         success = true,
-        //     })
-        //     .catch((err) => {
-        //         console.log(err);
-        //     })
-        // },
-    //}
+    methods: {
+         postForm() {
+             const axios = require("axios");
+             axios.post('http://localhost:3000/entrepreneurs', {
+                firstname: this.firstname,
+                lastname: this.lastname,
+                address: this.address,
+                cp: this.cp,
+                city: this.city,
+                country: this.country,
+                phone: this.phone,
+                mail: this.mail,
+                corporate_name: this.corporate_name,
+                siret: this.siret,
+                share_capital: this.share_capital,
+                sales: this.sales,
+                financial_needs: this.financial_needs,
+                other_needs: this.other_needs,
+                project_title: this.project_title,
+                category: this.selected,
+                description: this.description,
+                web: this.web,
+                video_link: this.video_link,
+                password: this.password,
+            })
+            .then(() => {
+                this.firstname = "";
+                this.lastname = "";
+                this.address = "";
+                this.cp = "";
+                this.city = "";
+                this.country = "";
+                this.phone = "";
+                this.mail = "";
+                this.corporate_name = "";
+                this.siret = "";
+                this.share_capital = "";
+                this.sales = "";
+                this.financial_needs = "";
+                this.other_needs = "";
+                this.project_title = "";
+                this.selected = "";
+                this.description = "";
+                this.web = "";
+                this.video_link = "";
+                this.password = "";
+                this.success = true;
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        },
+    }
 
 }
 </script>
