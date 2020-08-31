@@ -8,16 +8,16 @@
             <form>
                 <div class="form-group row">
                     <label for="category" class="col-sm-3 col-form-label"><strong>Choisissez une catégorie :</strong></label>
-                    <select class="form-control col-sm-2">
-                        <option name="education">Éducation</option>
-                        <option name="ecologie">Écologie</option>
-                        <option name="mixite">Mixité</option>
-                        <option name="emploi">Emploi</option>
-                        <option name="tech">Tech</option>
-                        <option name="social">Social</option>
-                        <option name="handicap">Handicap</option>
+                    <select class="form-control col-sm-2" v-model="form">
+                        <option value="Éducation">Éducation</option>
+                        <option value="Écologie">Écologie</option>
+                        <option value="Mixite">Mixité</option>
+                        <option value="Emploi">Emploi</option>
+                        <option value="Tech">Tech</option>
+                        <option value="Social">Social</option>
+                        <option value="Handicap">Handicap</option>
                     </select>
-                    <button type="button" class="btn mb-2 ml-5 btn-dark">Filtrer les projets</button>
+                    <button type="button" class="btn mb-2 ml-5 btn-dark" @click="filterCategory()">Filtrer les projets</button>
                 </div>
             </form>
         </div>
@@ -69,7 +69,13 @@
         methods: {
             goToProject(identifiant) {
                 this.$router.push({ path: `/entrepreneur-details/${identifiant}` });
-            }
+            },
+
+            filterCategory() {
+                const axios = require("axios");
+                axios.get(`http://localhost:3000/projets/${this.selected}`)
+                .then(response => (this.projets = response.data))
+            },
         },
 
         mounted() {

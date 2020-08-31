@@ -2,55 +2,33 @@
   <div class="accueil">
 
 <!-- Bannière intro "Accroche" -->
-    <div class="banner">
-      <div class="left-box">
-        <h1 class="yellow">MEETINVEST : <br>rencontrez des entrepreneurs qui vous correspondent</h1>
-        <Bouton :title="text"></Bouton>
+    <div class="banner p-5 bg-yellow">
+      <div>
+        <h2 class="text-justify mb-4 satisfy h1">Rencontrez des entrepreneurs qui vous correspondent !</h2>
+        <p class="text-justify h4"><small class="text-muted">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores nemo quaerat placeat eaque eos eius, perspiciatis!</small></p>
       </div>
-
-      <div class="right-box">
-        <h2 class="yellow">Notre vision :</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        <h2 class="yellow">Nos missions : </h2>
-        <ul>
-          <li>Lorem ipsum dolor sit amet</li>
-          <li>Lorem ipsum dolor sit amet</li>
-          <li>Lorem ipsum dolor sit amet</li>
-        </ul>
-
-      </div>
+      <Bouton :title="text" class="ascenter" @click.native="goToEntrepreneurs()"></Bouton>
     </div>
 
 <!-- Bloc fonctionnement avec pictos et cards -->
-    <div class="banner2">
-
-      <div class="grid">
-        <h2 class="block-title">Comment ça fonctionne ?</h2>
-
-        <div class="step1 bg-yellow">
-          <img src="@/assets/pictos/01_choose.png" class="card-img-top size80" alt="picto choisir">
-          <h3>Étape 1</h3>
-          <p>Je choisis le projet qui me correspond</p>
-        </div>
-
-        <div class="step2 bg-yellow">
-          <img src="@/assets/pictos/05_meeting.png" class="card-img-top size80" alt="picto se rencontrer">
-          <h3>Étape 2</h3>
-          <p>Je rencontre le porteur de projet, on échange sur ses besoins et mes souhaits</p>
-        </div>
-
-        <div class="step3 bg-yellow">
-          <img src="@/assets/pictos/06_contract.png" class="card-img-top size80" alt="picto contrat">
-          <h3>Étape 3</h3>
-          <p>On conclut et la collaboration démarre</p>
-        </div>
-
-      </div>
-
+      <div class="grid mt-5 mb-5 pb-4 pt-4 border">
+          <h2 class="block-title satisfy h1">Comment ça fonctionne ?</h2>
+          <div>
+            <p class="h1 mb-5"><i class="fas fa-hand-holding-heart border rounded-circle p-5 bg-yellow"></i></p>
+            <p>Je choisis le projet qui me correspond</p>
+          </div>
+          <div>
+            <p class="h1 mb-5"><i class="fas fa-people-arrows border rounded-circle p-5 bg-yellow"></i></p>
+            <p>Je rencontre le porteur de projet, on échange sur ses besoins et mes souhaits</p>
+          </div>
+          <div>
+            <p class="h1 mb-5"><i class="fab fa-slideshare border rounded-circle p-5 bg-yellow"></i></p>
+            <p>On conclut et la collaboration démarre</p>
+          </div>
       </div>
 
 <!-- Bloc Entrepreneurs à l'affiche -->
-        <h2 class="block-title">Les entrepreneurs à l'affiche</h2>
+        <h2 class="block-title mt-5 satisfy h1">Les entrepreneurs à l'affiche</h2>
 
         <div class="grid">
             <Carte v-for="projet in projets" :key="projet.id">
@@ -68,19 +46,17 @@
                     <a href="" class="btn btn-warning" @click="goToProject(projet.id)">En savoir plus</a>
                 </template>
             </Carte>
-            <Bouton :title="text3"></Bouton>
         </div>
+        <Bouton :title="text3" class="mt-5"></Bouton>
 
 
 <!-- Bloc À propos / contact -->
-      <div class="banner grey">
-        <div class="left-box">
-          <h3>On est là pour vous !</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <Bouton :title="text2"></Bouton>
+      <div class="banner bgGrey mt-5 mb-5 p-5 border">
+        <div class="">
+          <h3 class="text-justify mb-4 satisfy h1">On est là pour vous !</h3>
+          <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-        <div class="right-box">
-        </div>
+        <Bouton :title="text2" class="ascenter" @click.native="goToApropos()"></Bouton>
       </div>
 
   </div>
@@ -116,6 +92,14 @@ export default {
   methods: {
       goToProject(identifiant) {
           this.$router.push({ path: `/entrepreneur-details/${identifiant}` });
+      },
+
+      goToEntrepreneurs() {
+          this.$router.push({ path: '/entrepreneurs/'});
+      },
+
+      goToApropos() {
+          this.$router.push({ path: '/a-propos/'});
       }
   },
 
@@ -130,48 +114,20 @@ export default {
 
 <style lang="scss">
 
+  .accueil{
+    margin: 10vh 10vw;
+  }
+
   .banner {
-    display: flex;
-    justify-content: center;
-    padding: 40px 100px;
-  }
-
-  .left-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    text-align: left;
-    margin-right: 70px;
-  }
-
-  .right-box {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: right;
-    text-align: right;
-  }
-
-  .banner2 {
-    display: flex;
-    background-color: #FBDF00;
-    justify-content: space-around;
-    padding: 20px 20px;
-  }
-
-  .banner2 img {
-    margin-bottom: 5%;
-  }
-
-  .banner2 p {
-    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2em;
   }
 
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 2, 1fr 3fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-gap: 2em;
   }
 
   .block-title {
@@ -181,50 +137,17 @@ export default {
     margin-bottom: 5%;
   }
 
-  .step1 {
-    grid-column: 1 / 1;
-    grid-row: 2 / 2;
-  }
-
-  .step1 img {
-    width: 40%;
-    align-self: end;
-  }
-
-  .step2 img {
-    width: 40%;
-    margin-bottom: 16%;
-    align-self: end;
-  }
-
-  .step3 img {
-    width: 40%;
-    margin-bottom: 14%;
-    align-self: end;
-  }
-
   .bg-yellow {
     background-color: #FBDF00;
-    border: none;
-    justify-content: center;
   }
 
-  .size80 {
-    width: 80%;
-  }
-
-  .yellow {
-    color: #FBDF00;
-  }
-
-  .grey {
+  .bgGrey {
     background-color: #E9E9EB;
     color: #2c3e50;
   }
 
-  h1 {
-    font-size: 2em;
-    font-weight: bold;
+  .yellow {
+    color: #FBDF00;
   }
 
   h2 {
@@ -255,10 +178,6 @@ export default {
 
   .satisfy {
   font-family: 'Satisfy', cursive;
-  }
-
-  .bgy {
-      background-color: #FBDF00;
   }
 
 </style>
