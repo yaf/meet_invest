@@ -8,16 +8,16 @@
             <form>
                 <div class="form-group row">
                     <label for="category" class="col-sm-3 col-form-label"><strong>Choisissez une catégorie :</strong></label>
-                    <select class="form-control col-sm-2" v-model="form">
-                        <option value="Éducation">Éducation</option>
-                        <option value="Écologie">Écologie</option>
+                    <select class="form-control col-sm-2" v-model="selected">
+                        <option value="Education">Éducation</option>
+                        <option value="Ecologie">Écologie</option>
                         <option value="Mixite">Mixité</option>
                         <option value="Emploi">Emploi</option>
                         <option value="Tech">Tech</option>
                         <option value="Social">Social</option>
                         <option value="Handicap">Handicap</option>
                     </select>
-                    <button type="button" class="btn mb-2 ml-5 btn-dark" @click="filterCategory()">Filtrer les projets</button>
+                    <button type="button" class="btn mb-2 ml-5 btn-dark" @click="filterCategory(selected)">Filtrer les projets</button>
                 </div>
             </form>
         </div>
@@ -31,6 +31,7 @@
         <!-- encadré bordure simple grise : vue sur tous les projets -->
         <div class="border p-4 mt-5">
             <h2 class="mb-5 border p-4">Tous les projets</h2>
+            <p v-if="projetsNull"><strong>Aucun projet ne correspond malheureusement à votre recherche 💔</strong></p>
             <div class="grid">
                 <Carte v-for="projet in projets" :key="projet.id">
                     <template v-slot:img>
@@ -38,8 +39,8 @@
                         <!-- <img :src="projet.image"/> -->
                     </template>
                     <template v-slot:cardinfo>
-                        <h5 class="card-title text-uppercase border p-1">{{ projet.titre }}</h5>
-                        <p><small><i class="fas fa-tag"></i> {{ projet.categorie }}</small></p>
+                        <h5 class="card-title text-uppercase border p-1">{{ projet.title }}</h5>
+                        <p><small><i class="fas fa-tag"></i> {{ projet.category }}</small></p>
                         <h6 class="card-title text-justify"><small>Un projet porté par :</small> <span class="text-muted"><u>{{ projet.entrepreneur}}</u></span></h6>
                         <p class="card-text text-justify">{{ projet.description }}</p>
                         <p class="card-text border p-2">Montant recherché&nbsp;: {{ projet.financial_needs }}&nbsp;€</p>
@@ -63,6 +64,8 @@
         data() {
             return {
                 projets: "",
+                selected: "",
+                projetsNull: false,
             }
         },
 
@@ -71,10 +74,15 @@
                 this.$router.push({ path: `/entrepreneur-details/${identifiant}` });
             },
 
-            filterCategory() {
+            filterCategory(category) {
                 const axios = require("axios");
-                axios.get(`http://localhost:3000/projets/${this.selected}`)
+                axios.get(`http://localhost:3000/projetsCat/${category}`)
                 .then(response => (this.projets = response.data))
+                .then(response => {
+                    if(response == false){
+                        this.projetsNull = true;
+                    }
+                })    
             },
         },
 
@@ -83,7 +91,7 @@
             axios.get('http://localhost:3000/projets')
             .then(response => (this.projets = response.data))
         },
-
+            
     };
 </script>
 
