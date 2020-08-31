@@ -2,8 +2,8 @@
     <div class="entrepreneurdetails">
         <div v-for="item in projet" :key="item.id">
             <div class="bgImg border m-5 pt-5 pl-5 pr-5">
-                <h1 class="pb-5"><mark>{{item.titre}}</mark></h1>
-                <p class="text-justify"><i class="fas fa-tag mr-1"></i> <mark> {{item.categorie}}</mark></p>
+                <h1 class="pb-5"><mark>{{item.title}}</mark></h1>
+                <p class="text-justify"><i class="fas fa-tag mr-1"></i> <mark> {{item.category}}</mark></p>
                 <p class="text-justify"><mark>Un projet porté par : <span class="text-muted"><u>{{ item.entrepreneur}}</u></span></mark></p>
             </div>
             <div class="border m-5 pt-5 pl-5 pr-5">
@@ -16,9 +16,34 @@
                      </div>
                      <div class="item3">
                         <h3 class="text-justify mb-4">À propos de {{ item.entrepreneur}} :</h3>
-                        <p class="text-justify">{{ item.entrepreneur-description}} Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempora officia libero doloribus nesciunt minus eos? Doloribus omnis aut magni quibusdam, ducimus molestias et laudantium fugit unde quasi culpa id! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam tempora officia libero doloribus nesciunt minus eos? Doloribus omnis aut magni quibusdam, ducimus molestias et laudantium fugit unde quasi culpa id!</p>
+                        <p class="text-justify">{{ item.description_entrepreneur}}</p>
+                     </div>
+                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 item4 d-block" alt="image présentation du projet">     
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 item4 d-block" alt="image présentation du projet">     
+                            </div>
+                            <div class="carousel-item">
+                                <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 item4 d-block" alt="image présentation du projet">     
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
                      </div>   
-                     <img src="@/assets/pictos/projet2.jpg" class="text-justify col-md-9 mb-5 item4" alt="image présentation du projet">     
                 </div>
                 <Bouton :title="buttonTitle" class="mb-5 text-justify" @click.native="goToContact(item.id)"></Bouton>
             </div>
