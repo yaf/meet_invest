@@ -81,8 +81,10 @@
                 .then(response => {
                     if(response == false){
                         this.projetsNull = true;
+                    } else {
+                        this.projetsNull = false;
                     }
-                })    
+                }) 
             },
         },
 
