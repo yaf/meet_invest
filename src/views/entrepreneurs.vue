@@ -40,8 +40,8 @@
                     </template>
                     <template v-slot:cardinfo>
                         <h5 class="card-title text-uppercase border p-1">{{ projet.title }}</h5>
-                        <p><small><i class="fas fa-tag"></i> {{ projet.category }}</small></p>
-                        <h6 class="card-title text-justify"><small>Un projet porté par :</small> <span class="text-muted"><u>{{ projet.entrepreneur}}</u></span></h6>
+                        <p class="text-justify"><small><i class="fas fa-tag"></i> {{ projet.category }}</small></p>
+                        <h6 class="card-title text-justify"><small>Un projet porté par :</small> <span class="text-muted text-capitalize"><u>{{ projet.entrepreneur}}</u></span></h6>
                         <p class="card-text text-justify">{{ projet.description }}</p>
                         <p class="card-text border p-2">Montant recherché&nbsp;: {{ projet.financial_needs }}&nbsp;€</p>
                         <p class="card-text text-justify"><small>Autres besoins&nbsp;:</small> {{ projet.other_needs }}</p>
