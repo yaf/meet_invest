@@ -28,16 +28,17 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <div class="container">
-                                    <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 d-block img-fluid" alt="image présentation du projet">     
-                                </div>                            </div>
+                                    <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 d-block img-fluid" width="60%" alt="image présentation du projet">     
+                                </div>                            
+                            </div>
                             <div class="carousel-item">
                                 <div class="container">
-                                    <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 d-block img-fluid" alt="image présentation du projet">     
+                                    <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 d-block img-fluid" width="60%" alt="image présentation du projet">     
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <div class="container">
-                                    <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 d-block img-fluid" alt="image présentation du projet">     
+                                    <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 d-block img-fluid" width="60%" alt="image présentation du projet">     
                                 </div>
                             </div>
                         </div>
