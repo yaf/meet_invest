@@ -4,7 +4,7 @@
             <div class="bgImg border m-5 pt-5 pl-5 pr-5">
                 <h1 class="pb-5"><mark>{{item.title}}</mark></h1>
                 <p class="text-justify"><i class="fas fa-tag mr-1"></i> <mark> {{item.category}}</mark></p>
-                <p class="text-justify"><mark>Un projet porté par : <span class="text-muted"><u>{{ item.entrepreneur}}</u></span></mark></p>
+                <p class="text-justify"><mark>Un projet porté par : <span class="text-muted"><u class="text-capitalize">{{ item.entrepreneur}}</u></span></mark></p>
             </div>
             <div class="border m-5 pt-5 pl-5 pr-5">
                 <h2 class="text-justify mb-5"><u>Description du projet :</u></h2>
@@ -15,10 +15,11 @@
                         <p class="text-center border p-2 ml-5">Autres besoins&nbsp;: {{ item.other_needs }}</p>
                      </div>
                      <div class="item3">
-                        <h3 class="text-justify mb-4">À propos de {{ item.entrepreneur}} :</h3>
+                        <h3 class="text-justify mb-4">À propos de <span class="text-capitalize">{{ item.entrepreneur}} :</span></h3>
                         <p class="text-justify">{{ item.description_entrepreneur}}</p>
                      </div>
-                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                </div>
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -26,13 +27,18 @@
                         </ol>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 item4 d-block" alt="image présentation du projet">     
+                                <div class="container">
+                                    <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 d-block img-fluid" alt="image présentation du projet">     
+                                </div>                            </div>
+                            <div class="carousel-item">
+                                <div class="container">
+                                    <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 d-block img-fluid" alt="image présentation du projet">     
+                                </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 item4 d-block" alt="image présentation du projet">     
-                            </div>
-                            <div class="carousel-item">
-                                <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 item4 d-block" alt="image présentation du projet">     
+                                <div class="container">
+                                    <img src="@/assets/pictos/projet2.jpg" class="text-justify mb-5 d-block img-fluid" alt="image présentation du projet">     
+                                </div>
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -44,7 +50,7 @@
                             <span class="sr-only">Next</span>
                         </a>
                      </div>   
-                </div>
+                
                 <Bouton :title="buttonTitle" class="mb-5 text-justify" @click.native="goToContact(item.id)"></Bouton>
             </div>
         </div>
@@ -89,7 +95,7 @@
             grid-template-areas: 
             "a a a a a b b b"
             "c c c c c b b b"
-            "d d d d d b b b";
+            "d d d d d d d d";
             grid-gap: 2em;
          }
 
