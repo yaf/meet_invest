@@ -125,12 +125,6 @@ export default {
     margin: 10vh 10vw;
   }
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2em;
-  }
-
   .block-title {
     grid-column: 1 / 4;
     grid-row: 1 / 1;
