@@ -2,12 +2,14 @@
   <div class="accueil">
 
 <!-- Bannière intro "Accroche" -->
-    <div class="banner p-5 bg-yellow">
-      <div>
-        <h2 class="text-justify mb-4 satisfy h1">Rencontrez des entrepreneurs qui vous correspondent !</h2>
-        <p class="text-justify h4"><small class="text-muted">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores nemo quaerat placeat eaque eos eius, perspiciatis!</small></p>
-      </div>
-      <Bouton :title="text" class="ascenter" @click.native="goToEntrepreneurs()"></Bouton>
+    <div class="container p-5 bg-yellow">
+      <div class="row">
+        <div class="col-sm">
+          <h2 class="text-justify mb-4 satisfy h1">Rencontrez des entrepreneurs qui vous correspondent !</h2>
+          <p class="text-justify h4"><small class="text-muted">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores nemo quaerat placeat eaque eos eius, perspiciatis!</small></p>
+        </div>
+        <Bouton :title="text" class="ascenter col-sm mt-4" @click.native="goToEntrepreneurs()"></Bouton>
+      </div>    
     </div>
 
 <!-- Bloc fonctionnement avec pictos et cards -->
