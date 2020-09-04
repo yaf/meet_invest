@@ -10,3 +10,5 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+
+// Coucou, un commit de Yannick ?
